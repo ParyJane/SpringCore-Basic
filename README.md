@@ -8,4 +8,15 @@
     
   * **좋은 객체 지향 프로그래밍이란?**
     - 객체 지향 특징 : 추상화, 캡슐화, 상속, **다형성**
+    
+  * **좋은 객체 지향 설계의 5가지 원칙(SOLID)**
+    - SRP(Single responsibility principle) 단일 책임 원칙
+    - **OCP**(Open/closed principle) 개방-폐소 원칙
+    - LSP(Liskov subsitution principle) 리스코프 치화 원칙
+    - ISP(Interface segregation principle) 인터페이스 분리 원칙
+    - **DIP**(Dependency inversion principle) 의존관계 역전 원칙 
+    
+  * **객체 지향 설계와 스프링**
+    - 스프링은 DI와 DI 컨테이너 기술로 **다형성 + OCP, DIP**를 가능하도록 지원
+    - 한마디로 정리하자면, ```모든 설계에 역할과 구현을 분리해야 한다.```
   
