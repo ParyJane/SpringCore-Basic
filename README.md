@@ -80,8 +80,8 @@
     - 공연 기획자: ```AppConfing```
 ### AppConfig
 ![AppConfig 의존관계 주입](https://user-images.githubusercontent.com/96585009/203082427-b579fd36-ccd1-4d87-abac-6bf4f6f9a2e0.jpg)
-  * 애플리케이션 실제 동작에 필요한 **구현 객체를 생성**
-  * 생성한 객체 인스턴스의 참조(레퍼런스)를 **생성자를 통해서 주입(연결)**
+  * [AppConfig](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/AppConfig.java)는 애플리케이션 실제 동작에 필요한 **구현 객체를 생성**한다.
+  * 생성한 객체 인스턴스의 참조(레퍼런스)를 **생성자를 통해서 주입(연결)** 한다.
     - ```MemberServiceImpl``` → ```MemoryMemberRepository```
     - ```OrderServiceImpl``` → ```MemoryMeberRepository``` , ```FixDiscountPolicy```
     
