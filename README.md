@@ -40,8 +40,8 @@
   * Dependencies
       - 선택 X
 ### 비지니스 요구사항과 설계
+![회원 도메인 협력 관계](https://user-images.githubusercontent.com/96585009/202854409-d05fc839-0033-4bc5-a9dd-a9309049798c.jpg)
   * 회원 서비스 : 회원가입 / 회원조회
-  ![회원 도메인 협력 관계](https://user-images.githubusercontent.com/96585009/202854409-d05fc839-0033-4bc5-a9dd-a9309049798c.jpg)
   * 주문과 할인 정책 : 정액 할인 정책 / 정률 할인 정책
 ### 회원 도메인 개발
   * **java.hello.core.member**
@@ -68,4 +68,22 @@
     - [OrderServiceImpl](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/order/OrderServiceImpl.java) 주문 기능 구현체
   * **test.hello.core.order**
     - [OrderServiceTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/order/OrderServiceTest.java) Junit을 사용한 테스트
+  
+## 3. 스프링 핵심 원리 이해(2) - 객체 지향 원리 적용
+### 새로운 할인 정책 개발
+  * 주문한 금액의 일정% 를 할인해주는 새로운 정률 할인 정책 추가
+    - [RateDiscountPolicy](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/discount/RateDiscountPolicy.java) 할인 정책 구현체 - 정률 할인 정책
+### 관심사의 분리
+  * 배우는 본인의 역할인 배역을 수행하는 것에만 집중해야한다. 배역을 캐스팅하는것은 다른 공연 기획자의 역할이다.
+    - 배우: ```private DiscountPolicy discountPolicy;```
+    - 캐스팅: ```new FixDiscountPolicy()``` / ```new RateDiscountPolicy()```
+    - 공연 기획자: ```AppConfing```
+### AppConfig
+![AppConfig 의존관계 주입](https://user-images.githubusercontent.com/96585009/203082427-b579fd36-ccd1-4d87-abac-6bf4f6f9a2e0.jpg)
+  * 애플리케이션 실제 동작에 필요한 **구현 객체를 생성**
+  * 생성한 객체 인스턴스의 참조(레퍼런스)를 **생성자를 통해서 주입(연결)**
+    - ```MemberServiceImpl``` → ```MemoryMemberRepository```
+    - ```OrderServiceImpl``` → ```MemoryMeberRepository``` , ```FixDiscountPolicy```
+    
 
+  
