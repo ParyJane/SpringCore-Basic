@@ -4,7 +4,12 @@ package hello.core.member;
 public class MemberServiceImpl implements MemberService{
 	
 	// 회원 정보 저장소 
-	MemberRepository memberRepository = new MemoryMemberRepository();
+	private final MemberRepository memberRepository;
+	
+	// 메모리 리파지토리가 어떤게 들어갈지 생성자를 통해서 결정
+	public MemberServiceImpl(MemberRepository memberRepository) {
+		this.memberRepository = memberRepository;
+	}
 
 	@Override
 	public void join(Member member) {
