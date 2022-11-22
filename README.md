@@ -94,6 +94,9 @@
     - **동적인 객체 인스턴스 의존관계** : 애플리케이션 실행 시점에 실제 생성된 객체 인스턴스의 참조가 연결된 의존관계
   * **IoC 컨테이너, DI 컨테이너**
     - AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결해 주는 것을 뜻함
-    
+### Spring으로 전환하기
+  * AppConfig에 설정을 구성한다는 뜻의 ```@Configuration``` 을 붙임
+  * 각 메서드에 ```@Bean``` 을 붙임 → 스프링 컨테이너에 스프링 빈으로 등록됨
+  * 스프링 컨테이너에 객체를 스프링 빈으로 등록하고, 스프링 컨테이너에서 스프링 빈을 찾아서 사용 ex) [MemberApp](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/MemberApp.java), [OrderApp](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/OrderApp.java)
 
   
