@@ -80,10 +80,20 @@
     - 공연 기획자: ```AppConfing```
 ### AppConfig
 ![AppConfig 의존관계 주입](https://user-images.githubusercontent.com/96585009/203082427-b579fd36-ccd1-4d87-abac-6bf4f6f9a2e0.jpg)
-  * [AppConfig](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/AppConfig.java)는 애플리케이션 실제 동작에 필요한 **구현 객체를 생성**한다.
+  * AppConfig 는 애플리케이션 실제 동작에 필요한 **구현 객체를 생성**한다.
   * 생성한 객체 인스턴스의 참조(레퍼런스)를 **생성자를 통해서 주입(연결)** 한다.
     - ```MemberServiceImpl``` → ```MemoryMemberRepository```
     - ```OrderServiceImpl``` → ```MemoryMeberRepository``` , ```FixDiscountPolicy```
+### AppConfig 리팩토링
+  * [AppConfig](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/AppConfig.java) 코드 중복 제거 & 역할과 구현 클래스를 한눈에 보이게끔 정리
+### IoC, DI, 그리고 컨테이너
+  * **제어의 역전 IoC(Inversion of Control)**
+    - 프로그램의 제어 흐름을 직접 제어하는 것이 아니라 *외부(AppConfig)*에서 관리하는것을 뜻함
+  * **의존관계 주입 ID(Dependency Injection)**
+    - **정적인 클래스 의존관계** : 클래스가 사용하는 import 코드만 보고 의존관계를 쉽게 파악할 수 있음
+    - **동적인 객체 인스턴스 의존관계** : 애플리케이션 실행 시점에 실제 생성된 객체 인스턴스의 참조가 연결된 의존관계
+  * **IoC 컨테이너, DI 컨테이너**
+    - AppConfig 처럼 객체를 생성하고 관리하면서 의존관계를 연결해 주는 것을 뜻함
     
 
   
