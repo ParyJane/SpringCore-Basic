@@ -98,5 +98,22 @@
   * AppConfig에 설정을 구성한다는 뜻의 ```@Configuration``` 을 붙임
   * 각 메서드에 ```@Bean``` 을 붙임 → 스프링 컨테이너에 스프링 빈으로 등록됨
   * 스프링 컨테이너에 객체를 스프링 빈으로 등록하고, 스프링 컨테이너에서 스프링 빈을 찾아서 사용 ex) [MemberApp](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/MemberApp.java), [OrderApp](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/java/hello/core/OrderApp.java)
-
+  
+## 4. 스프링 컨테이너와 스프링 빈
+### 스프링 컨테이너란?
+  * ```ApplicationContext```를 스프링 컨테이너라고 함
+  * ```ApplicationContext```는 인터페이스다 (이의 구현체는 ```new AnnotaionConfigApplicationContext(AppConfig.class)```)
+### 컨테이너에 등록된 빈 조회
+  * [ApplicationContextInfoTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextInfoTest.java) *스프링 빈이 실제 잘 등록 되었는지 확인*
+  * 모든 빈 출력하기
+    - ```ac.getBeanDefinitionNames()```: 스프링에 등록된 모든 빈 이름 조회
+    - ```ac.getBean()```: 빈 이름으로 빈 객체(인스턴스) 조회  
+  * 애플리케이션 빈 출력하기
+    - 스프링 내부에서 사용하는 빈은 ```getRole()``` 로 구분
+      + ```ROLE_APPLICATION``` : 일반적으로 사용자가 정의한 빈
+      + ```ROLE_INFRASTRUCTURE``` : 스프링 내부에서 사용하는 빈
+### 스프링 빈 조회 - 기본
+  * [ApplicationContextBasicFindTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextBasicFindTest.java) *스프링 컨테이너에서 스프링 빈을 찾는 가장 기본적인 조회 방법*
+  * ```ac.getBean(빈 이름, 타입)```
+  * ```ac.getBean(타입)```
   
