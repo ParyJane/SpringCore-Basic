@@ -116,4 +116,11 @@
   * [ApplicationContextBasicFindTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextBasicFindTest.java) *스프링 컨테이너에서 스프링 빈을 찾는 가장 기본적인 조회 방법*
   * ```ac.getBean(빈 이름, 타입)```
   * ```ac.getBean(타입)```
-  
+### 스프링 빈 조회 - 동일한 타입이 둘 이상
+  * [ApplicationContextSameBeanFindTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextSameBeanFindTest.java)
+  * 타입으로 조회시 같은 타입의 스프링 빈이 둘 이상이면 오류 발생
+  * 특정 타입의 빈을 모두 조회할때는 ```getBeansOfType()```을 쓴다 *(반환 타입은 ```Map<String, MemberRepository>```)*
+### 스프링 빈 조회 - 상속관계
+  * [ApplicationContextExtendsFindTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextExtendsFindTest.java)
+  * 부모 타입으로 조회하면 자식 타입도 함께 조회한다.
+  * 자바 객체는 모두 Object 이기 때문에 Object 타입으로 조회하면 모든 스프링 빈을 조회한다.
