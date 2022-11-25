@@ -134,3 +134,7 @@
 ### 다양한 설정 형식 지원 - 자바 코드, XML
   * [appConfig.xml](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/resources/appConfig.xml) / [XmlAppContext](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/xml/XmlAppContext.java)
   * ```GenericXmlApplicationContext``` 를 사용하면서 ```xml``` 설정 파일을 넘겨준다.
+### 스프링 빈 설정 메타 정보
+  * [BeanDefinitionTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beandefinition/BeanDefinitionTest.java)
+  * ```BeanDefinition```을 빈 설정 메타정보라 한다
+    - ```@Bean``` , ```<bean>``` 당 각각 하나씩 메타 정보가 생성된다
