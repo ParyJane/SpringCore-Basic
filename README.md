@@ -124,3 +124,13 @@
   * [ApplicationContextExtendsFindTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beanfind/ApplicationContextExtendsFindTest.java)
   * 부모 타입으로 조회하면 자식 타입도 함께 조회한다.
   * 자바 객체는 모두 Object 이기 때문에 Object 타입으로 조회하면 모든 스프링 빈을 조회한다.
+### BeanFactory와 ApplicationContext
+  * **BeanFactory** 
+    - 스프링 컨테이너의 최상위 인터페이스
+    - 스프링 빈을 관리하고 조회하는 역할 →  ```getBean()``` 제공
+  * **ApplicationContext**
+    - BeanFactory 기능을 모두 상속받아서 제공
+    - BeanFactory 뿐만 아니라 다른 부가기능 또한 제공
+### 다양한 설정 형식 지원 - 자바 코드, XML
+  * [appConfig.xml](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/main/resources/appConfig.xml) / [XmlAppContext](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/xml/XmlAppContext.java)
+  * ```GenericXmlApplicationContext``` 를 사용하면서 ```xml``` 설정 파일을 넘겨준다.
