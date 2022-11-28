@@ -138,3 +138,14 @@
   * [BeanDefinitionTest](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/beandefinition/BeanDefinitionTest.java)
   * ```BeanDefinition```을 빈 설정 메타정보라 한다
     - ```@Bean``` , ```<bean>``` 당 각각 하나씩 메타 정보가 생성된다
+
+## 5. 싱글톤 컨테이너
+### 스프링 없는 순수한 DI 컨테이너 테스트
+  * [SingletonTest.pureContainer()](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/singleton/SingletonTest.java)
+  * 기존에 만들었던 스프링 없는 순수한 DI 컨테이너는 고객이 요청할때마다 객체를 새로 생성한다. → 메모리 낭비가 심하다.
+  * 이를 해결하기 위해서 객체가 딱 1개만 생성되고 공유하도록 설계한다. → ```싱글톤 패턴```
+### 싱글톤 패턴
+  * [SingletonService](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/singleton/SingletonService.java)
+  * [SingletonTest.singletonServiceTest()](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/singleton/SingletonTest.java)
+  * ```싱글톤 패턴```이란 클래스의 인스턴스가 딱 1개만 생성되는것을 보장하는 디자인 패턴
+  * 고객의 요청이 들어올 때마다 객체를 생성하는 거싱 아니라, 이미 **만들어진 객체를 공유**해서 효율적으로 사용할 수 있다.
