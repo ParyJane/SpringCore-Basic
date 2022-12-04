@@ -149,3 +149,10 @@
   * [SingletonTest.singletonServiceTest()](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/singleton/SingletonTest.java)
   * ```싱글톤 패턴```이란 클래스의 인스턴스가 딱 1개만 생성되는것을 보장하는 디자인 패턴
   * 고객의 요청이 들어올 때마다 객체를 생성하는 거싱 아니라, 이미 **만들어진 객체를 공유**해서 효율적으로 사용할 수 있다.
+### 싱글톤 컨테이너
+  * * [SingletonTest.springContainer()](https://github.com/ParyJane/SpringCore-Basic/blob/main/core/src/test/java/hello/core/singleton/SingletonTest.java)
+  * 스프링 컨테이너는 싱글턴 패턴을 적용하지 않아도 객체 인스턴스를 싱글톤으로 관리한다.
+    - 때문에 싱글톤 패턴의 모든 단점을 해결하면서 객체를 싱글톤으로 유지할 수 있다.
+      + 싱글톤 패턴을 구현하는 지저분한 코드가 들어가지 않아도 됨
+      + DIP, OCP, 테스트. private 생성자로 부터 자유롭게 싱글톤 사용 가능
+  * 스프링 컨테이너 덕분에 고객의 요청이 올 때 마다 객체를 생성하는 것이 아니라, 이미 만들어진 객체를 공유해서 효울적으로 재사용 할 수 있다.
